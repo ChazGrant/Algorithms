@@ -6,11 +6,9 @@ def sum(arr):
     if len(arr) == 0:
         return 0
     '''
-    if arr == []:
-        return 0
-    else:
-        return arr.pop() + sum(arr)
+    return 0 if arr == [] else arr.pop() + sum(arr)
 
-if __name__ == "__main__"
-    l = [1,5,6,7]
+
+if __name__ == "__main__":
+    l = [1, 5, 6, 7]
     print(sum(l))
