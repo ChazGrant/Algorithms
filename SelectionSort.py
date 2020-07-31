@@ -14,7 +14,7 @@ def sortArray(arr):
         item = findSmallest(arr)
         newArray.append(arr.pop(item))
     return newArray
-
-l = [5,9,2,14,6,8,54]
-sortl = sortArray(l)
-print(sortl)
+if __name__ == "__main__":
+    l = [5,9,2,14,6,8,54]
+    sortl = sortArray(l)
+    print(sortl)
