@@ -1,13 +1,3 @@
-def find_lowest(costs):
-    lowest_cost = float("inf")
-    lowest_cost_node = None
-    for node in costs:
-        cost = costs[node]
-        if cost > lowest_cost and node not in processed:
-            lowest_cost = cost
-            lowest_cost_node = node
-    return lowest_cost_node
-
 graph = {}
 graph['start'] = {}
 graph['start']['a'] = 6
@@ -31,6 +21,18 @@ parents["b"] = "start"
 parents["fin"] = None
 
 processed = []
+
+def find_lowest(costs):
+    lowest_cost = float("inf")
+    lowest_cost_node = None
+    for node in costs:
+        cost = costs[node]
+        if cost > lowest_cost and node not in processed:
+            lowest_cost = cost
+            lowest_cost_node = node
+    return lowest_cost_node
+
+
 node = find_lowest(costs)
 while node is not None:
     cost = costs[node]
@@ -41,6 +43,4 @@ while node is not None:
             costs[n] = new_cost
             parents[n] = node
         processed.append(node)
-        node = find_lowest(node)
-
-print(node)
+        node = find_lowest(costs)
